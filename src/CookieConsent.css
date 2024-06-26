@@ -1,0 +1,31 @@
+/* CookieConsent.css */
+.cookie-consent-container {
+    position: fixed;
+    bottom: 0;
+    background-color: #827f7f;
+    /* Light grey background */
+    padding: 20px;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+    /* Add shadow to the top */
+    font-family: 'Arial', sans-serif;
+    /* Customize font */
+}
+
+.cookie-consent-button {
+    background-color: #4CAF50;
+    /* Green background */
+    color: white;
+    padding: 10px 20px;
+    margin-left: 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    /* Rounded corners */
+}
+
+.cookie-consent-button:hover {
+    background-color: #45a049;
+    /* Darker green on hover */
+}
