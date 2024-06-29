@@ -1,0 +1,147 @@
+.left-arrow,
+.right-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 2rem;
+    z-index: 10;
+}
+
+.left-arrow {
+    left: 0;
+    position: -webkit-sticky;
+    position: sticky;
+}
+
+.right-arrow {
+    right: 0;
+}
+
+.window-container {
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+}
+
+.first-window,
+.second-window {
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.first-window::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.first-window {
+    background-image: url('beach.jpg');
+    background-size: cover;
+    background-position: center;
+    justify-content: center;
+}
+
+.first-window p {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+    color: white;
+    margin: 2px;
+    z-index: 2;
+}
+
+.first-window h1 {
+    font-size: 32px;
+    z-index: 2;
+    margin: 5px;
+}
+
+.first-window h2 {
+    margin: 4px;
+    z-index: 2;
+}
+
+.second-window {
+    height: 130%;
+}
+
+.second-window-topic {
+    font-size: 10px;
+    color: white;
+    margin: 10px 0;
+    margin-top: -15px;
+}
+
+.second-window-description {
+    background-color: #f0f0f041;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    width: 70%;
+    margin-left: 20px;
+    margin-right: auto;
+    font-size: 0.8em;
+    text-align: justify;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin: auto;
+    margin-bottom: 20px;
+}
+
+.second-window-description:hover {
+    transform: translateY(-5px);
+    background-color: #e8e8e83a;
+}
+
+.second-window-experience {
+    background-color: #f0f0f041;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    width: 70%;
+    font-size: 0.8em;
+    text-align: justify;
+    padding-top: 5px;
+    padding-bottom: auto;
+    margin: auto;
+    margin-bottom: 50px;
+}
+
+.second-window-experience:hover {
+    transform: translateY(-5px);
+    background-color: #e8e8e83a;
+}
+
+.second-window-experience p,
+.second-window-experience ul,
+.second-window-experience li {
+    margin-bottom: 5px;
+}
+
+.second-window-experience ul {
+    padding-left: 20px;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}

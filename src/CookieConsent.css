@@ -11,6 +11,7 @@
     /* Add shadow to the top */
     font-family: 'Arial', sans-serif;
     /* Customize font */
+    z-index: 3000;
 }
 
 .cookie-consent-button {

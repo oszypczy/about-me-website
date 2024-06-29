@@ -1,0 +1,11 @@
+.dark-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.685);
+    /* Adjust the color and opacity as needed */
+    z-index: 2000;
+    /* Ensure it covers other elements */
+}

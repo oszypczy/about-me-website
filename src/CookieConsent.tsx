@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
-import './CookieConsent.css'
+import './CookieConsent.css';
+import DarkOverlay from './DarkOverlay'; // Import the DarkOverlay component
 
 const CookieConsent = () => {
     const [consentGiven, setConsentGiven] = useState(false);
@@ -14,13 +15,16 @@ const CookieConsent = () => {
         setConsentGiven(true);
     };
 
-    if (consentGiven) return null;
-
     return (
-        <div className="cookie-consent-container">
-            We use cookies to improve your experience. By continuing, you agree to our use of cookies.
-            <button className="cookie-consent-button" onClick={handleConsent}>I Agree</button>
-        </div>
+        <>
+            <DarkOverlay isVisible={!consentGiven} />
+            {!consentGiven && (
+                <div className="cookie-consent-container">
+                    We use cookies to improve your experience. By continuing, you agree to our use of cookies.
+                    <button className="cookie-consent-button" onClick={handleConsent}>I Agree</button>
+                </div>
+            )}
+        </>
     );
 };
 
