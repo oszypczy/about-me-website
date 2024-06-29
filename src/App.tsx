@@ -4,20 +4,26 @@ import NavigationBar from './NavigationBar';
 import AboutMe from './AboutMe/AboutMe';
 import Contact from './Contact/Contact';
 import Home from './Home/Home';
-import CookieConsent from './CookieConsent';
+import CookieConsent from './Cookies/CookieConsent';
+import RODO from './RODO/RODO';
+
+import { CookieConsentProvider } from './Cookies/CookieConsentContext';
 
 function App() {
     return (
-        <BrowserRouter>
-            <CookieConsent />
-            <NavigationBar />
-            <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/home" element={<Home />} />
-                <Route path="/about-me" element={<AboutMe />} />
-                <Route path="/contact" element={<Contact />} />
-            </Routes>
-        </BrowserRouter>
+        <CookieConsentProvider>
+            <BrowserRouter>
+                <CookieConsent />
+                <NavigationBar />
+                <RODO />
+                <Routes>
+                    <Route path="/" element={<Home />} />
+                    <Route path="/home" element={<Home />} />
+                    <Route path="/about-me" element={<AboutMe />} />
+                    <Route path="/contact" element={<Contact />} />
+                </Routes>
+            </BrowserRouter>
+        </CookieConsentProvider>
     );
 }
 

@@ -1,8 +1,8 @@
-import React, { createContext, useContext, useState, Dispatch, SetStateAction } from 'react';
+import React, { createContext, useContext, useState } from 'react';
 
 const LanguageContext = createContext<{
     language: string;
-    setLanguage: Dispatch<SetStateAction<string>>;
+    setLanguage: (newLanguage: string) => void;
 }>({
     language: 'en',
     setLanguage: () => { },
@@ -11,10 +11,19 @@ const LanguageContext = createContext<{
 export const useLanguage = () => useContext(LanguageContext);
 
 export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-    const [language, setLanguage] = useState('en');
+    const [language, setLanguage] = useState(() => {
+        const savedLanguage = localStorage.getItem('language');
+        return savedLanguage || 'en';
+    });
+
+    // Update the setLanguage function to also update local storage
+    const updateLanguage = (newLanguage: string) => {
+        setLanguage(newLanguage);
+        localStorage.setItem('language', newLanguage);
+    };
 
     return (
-        <LanguageContext.Provider value={{ language, setLanguage }}>
+        <LanguageContext.Provider value={{ language, setLanguage: updateLanguage }}>
             {children}
         </LanguageContext.Provider>
     );

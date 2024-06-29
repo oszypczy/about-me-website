@@ -39,16 +39,10 @@
 }
 
 .animateImage {
-    animation: slideInRight 1s forwards;
+    animation: slideInLeft 1s forwards;
 }
 
 @keyframes slideInLeft {
-    to {
-        transform: translateX(0);
-    }
-}
-
-@keyframes slideInRight {
     to {
         transform: translateX(0);
     }

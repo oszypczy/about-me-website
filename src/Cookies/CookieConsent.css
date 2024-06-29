@@ -1,32 +1,33 @@
-/* CookieConsent.css */
 .cookie-consent-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: fixed;
     bottom: 0;
     background-color: #827f7f;
-    /* Light grey background */
     padding: 20px;
     width: 100%;
     text-align: center;
     box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
-    /* Add shadow to the top */
     font-family: 'Arial', sans-serif;
-    /* Customize font */
     z-index: 3000;
 }
 
 .cookie-consent-button {
     background-color: #4CAF50;
-    /* Green background */
     color: white;
     padding: 10px 20px;
     margin-left: 20px;
     border: none;
     cursor: pointer;
     border-radius: 5px;
-    /* Rounded corners */
+    font-size: 14px;
 }
 
 .cookie-consent-button:hover {
     background-color: #45a049;
-    /* Darker green on hover */
+}
+
+.cookie-consent-container p {
+    font-size: 14px;
 }
