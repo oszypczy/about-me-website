@@ -1,5 +1,6 @@
 import './AboutMe.css';
 import { useTranslation } from 'react-i18next';
+import image from '/zdj_glowne.jpg';
 
 function AboutMe() {
     const { t } = useTranslation();
@@ -14,7 +15,7 @@ function AboutMe() {
                 ))}
             </div>
             <div className="imageSection animateImage">
-                <img src="/zdj_glowne.jpg" alt="Me" />
+                <img src={image} alt="Me" />
                 <div className="imageName">Marcin J. Szerszeń</div>
             </div>
         </div>

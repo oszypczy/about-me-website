@@ -1,6 +1,8 @@
 import './NavigationBar.css';
 import { useTranslation } from 'react-i18next';
-import { useCookieConsent } from './Cookies/CookieConsentContext';
+import { useCookieConsent } from './../Cookies/CookieConsentContext';
+import pl_flag from './../../public/pl.png';
+import uk_flag from './../../public/uk.png';
 
 function NavigationBar() {
     const { t, i18n } = useTranslation();
@@ -28,13 +30,13 @@ function NavigationBar() {
             </div>
             <div className="languageFlags">
                 <img
-                    src="/pl.png"
+                    src={pl_flag}
                     alt="PL"
                     onClick={() => changeLanguage('pl')}
                     className={i18n.language === 'en' ? 'bwFilter' : ''}
                 />
                 <img
-                    src="/uk.png"
+                    src={uk_flag}
                     alt="EN"
                     onClick={() => changeLanguage('en')}
                     className={i18n.language === 'pl' ? 'bwFilter' : ''}

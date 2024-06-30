@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-import NavigationBar from './NavigationBar';
+import NavigationBar from './NavBar/NavigationBar';
 import AboutMe from './AboutMe/AboutMe';
 import Contact from './Contact/Contact';
 import Home from './Home/Home';
@@ -12,7 +12,7 @@ import { CookieConsentProvider } from './Cookies/CookieConsentContext';
 function App() {
     return (
         <CookieConsentProvider>
-            <BrowserRouter>
+            <BrowserRouter basename="/about-me-website/">
                 <CookieConsent />
                 <NavigationBar />
                 <RODO />
