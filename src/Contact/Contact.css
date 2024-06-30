@@ -1,0 +1,172 @@
+.contact-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    margin-top: 120px;
+    min-height: 100vh;
+}
+
+.linkedin-container,
+.email-container {
+    animation: slideInFromLeft 0.7s ease-out, fadeIn 0.7s ease-in-out;
+    background-color: #f0f0f041;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    margin-left: 20px;
+    font-size: 0.8em;
+    text-align: justify;
+    padding-top: auto;
+    padding-bottom: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 50%;
+}
+
+@keyframes slideInFromLeft {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.linkedin-container:hover,
+.email-container:hover {
+    transform: translateY(-5px);
+    background-color: #e8e8e83a;
+}
+
+.linkedin-container p,
+.email-container p {
+    margin: 0;
+    font-size: 16px;
+}
+
+.linkedin-container img {
+    display: flex;
+    width: 40px;
+    height: auto;
+}
+
+form {
+    animation: slideInFromLeft 0.7s ease-out forwards, fadeIn 0.7s ease-in-out forwards;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    width: 50%;
+    font-size: 16px;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 7px;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid rgb(220, 220, 220);
+}
+
+input:focus,
+textarea:focus {
+    border: 2px solid rgba(0, 206, 158, 1);
+}
+
+input[type="text"],
+input[type="email"] {
+    height: 35px;
+}
+
+textarea {
+    max-width: 100%;
+    min-width: 100%;
+    max-height: 100px;
+    min-height: 100px;
+}
+
+label {
+    margin-top: 1rem;
+}
+
+input[type="submit"] {
+    margin-top: 2rem;
+    cursor: pointer;
+    background: rgb(249, 105, 14);
+    color: white;
+    border: none;
+}
+
+.popup {
+    position: fixed;
+    right: 0;
+    top: 20%;
+    background-color: #f0f0f041;
+    padding: 20px;
+    border: 1px solid #ccc;
+    animation: slideIn 0.5s forwards;
+}
+
+.green-belt {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 5px;
+    background-color: green;
+    width: 100%;
+    animation: decreaseWidth 5s forwards;
+}
+
+.slide-out {
+    animation: slideOut 0.5s forwards;
+}
+
+@keyframes decreaseWidth {
+    from {
+        width: 100%;
+    }
+
+    to {
+        width: 0%;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        right: -100%;
+    }
+
+    to {
+        right: 0;
+    }
+}
+
+@keyframes slideOut {
+    from {
+        right: 0;
+    }
+
+    to {
+        right: -100%;
+    }
+}

@@ -20,6 +20,23 @@
     right: 0;
 }
 
+@keyframes slide {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(30px);
+    }
+}
+
+.left-arrow,
+.right-arrow {
+    animation: slide 3s ease-in-out infinite;
+}
+
 .window-container {
     display: flex;
     height: 100vh;

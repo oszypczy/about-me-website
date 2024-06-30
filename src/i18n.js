@@ -35,7 +35,13 @@ const resources = {
             'roads, structures, engineering facilities, energy (RES)'
         ],
         cookieMessage: 'We use cookies to improve your experience. By continuing, you agree to our use of cookies.',
-        cookieButton: "I Accept the policy"
+        cookieButton: "I Accept the policy",
+        popup: "Email sent successfully",
+        contact_container: "You can learn more about me by visiting my profile on linkedin",
+        email_container: "If I can help you or you need more information, write an email",
+        name: "Name",
+        message: "Message",
+        send: "Send"
     },
   },
   pl: {
@@ -71,7 +77,13 @@ const resources = {
             'drogi, konstrukcje, obiekty inżynierskie, energetyka (OZE)'
         ],
         cookieMessage: 'Używamy plików cookie, aby poprawić jakość korzystania z naszej strony. Kontynuując, zgadzasz się na nasze wykorzystanie plików cookie.',
-        cookieButton: "Akceptuję politykę"
+        cookieButton: "Akceptuję politykę",
+        popup: "Email wysłany pomyślnie",
+        contact_container: "Więcej o mnie dowiesz się odwiedzając mój profil na linkedin",
+        email_container: "Jeżeli mogę Ci pomóc lub potrzebujesz dodatkowych informacji napisz e-mail",
+        name: "Imię",
+        message: "Wiadomość",
+        send: "Wyślij"
     },
   },
 };
