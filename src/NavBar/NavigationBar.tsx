@@ -1,8 +1,8 @@
 import './NavigationBar.css';
 import { useTranslation } from 'react-i18next';
 import { useCookieConsent } from './../Cookies/CookieConsentContext';
-import pl_flag from './../../public/pl.png';
-import uk_flag from './../../public/uk.png';
+import pl_flag from '/pl.png';
+import uk_flag from '/uk.png';
 
 function NavigationBar() {
     const { t, i18n } = useTranslation();

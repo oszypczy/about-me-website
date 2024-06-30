@@ -12,7 +12,7 @@ import { CookieConsentProvider } from './Cookies/CookieConsentContext';
 function App() {
     return (
         <CookieConsentProvider>
-            <BrowserRouter basename="/about-me-website/">
+            <BrowserRouter>
                 <CookieConsent />
                 <NavigationBar />
                 <RODO />
