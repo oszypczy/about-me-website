@@ -24,9 +24,9 @@ function NavigationBar() {
     return (
         <nav className="NavBar">
             <div className="navLinks">
-                <a href="home" onClick={handleClick} style={linkStyle}>SZERSZEN.COnsulting</a>
-                <a href="about-me" onClick={handleClick} style={linkStyle}>{t('aboutMe')}</a>
-                <a href="contact" onClick={handleClick} style={linkStyle}>{t('contact')}</a>
+                <a href="#/home" onClick={handleClick} style={linkStyle}>SZERSZEN.COnsulting</a>
+                <a href="#/about-me" onClick={handleClick} style={linkStyle}>{t('aboutMe')}</a>
+                <a href="#/contact" onClick={handleClick} style={linkStyle}>{t('contact')}</a>
             </div>
             <div className="languageFlags">
                 <img
