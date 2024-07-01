@@ -11,8 +11,8 @@ import { CookieConsentProvider } from './Cookies/CookieConsentContext';
 
 function App() {
     return (
-        <CookieConsentProvider>
-            <HashRouter>
+        <HashRouter>
+            <CookieConsentProvider>
                 <CookieConsent />
                 <NavigationBar />
                 <RODO />
@@ -22,8 +22,8 @@ function App() {
                     <Route path="/about-me" element={<AboutMe />} />
                     <Route path="/contact" element={<Contact />} />
                 </Routes>
-            </HashRouter>
-        </CookieConsentProvider>
+            </CookieConsentProvider>
+        </HashRouter>
     );
 }
 
