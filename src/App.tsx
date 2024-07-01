@@ -1,4 +1,4 @@
-import { HashRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import NavigationBar from './NavBar/NavigationBar';
 import AboutMe from './AboutMe/AboutMe';
@@ -12,7 +12,7 @@ import { CookieConsentProvider } from './Cookies/CookieConsentContext';
 function App() {
     return (
         <CookieConsentProvider>
-            <HashRouter>
+            <BrowserRouter basename='about-me-website'>
                 <CookieConsent />
                 <NavigationBar />
                 <RODO />
@@ -22,7 +22,7 @@ function App() {
                     <Route path="/about-me" element={<AboutMe />} />
                     <Route path="/contact" element={<Contact />} />
                 </Routes>
-            </HashRouter>
+            </BrowserRouter>
         </CookieConsentProvider>
     );
 }
