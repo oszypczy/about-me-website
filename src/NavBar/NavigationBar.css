@@ -11,6 +11,37 @@ nav {
     z-index: 2100;
 }
 
+.NavBar .hamburger {
+    display: none;
+}
+
+@media (max-width: 425px) {
+    .NavBar .hamburger {
+        display: block;
+        cursor: pointer;
+        padding-top: 5px;
+    }
+
+    .NavBar .navLinks {
+        display: none;
+    }
+
+    .NavBar .navLinks.open {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .NavBar.open {
+        height: 200px;
+        align-items: flex-start;
+    }
+
+    .languageFlags {
+        padding-top: 10px;
+        align-self: flex-start;
+    }
+}
+
 .navLinks {
     display: flex;
     align-items: center;
