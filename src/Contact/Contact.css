@@ -1,12 +1,9 @@
 .contact-container {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 100%;
     width: 100vw;
-    margin-top: 120px;
-    min-height: 100vh;
 }
 
 .linkedin-container,
@@ -18,16 +15,21 @@
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease-in-out;
-    margin-left: 20px;
-    font-size: 0.8em;
-    text-align: justify;
-    padding-top: auto;
-    padding-bottom: auto;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 10px;
     width: 50%;
+}
+
+.linkedin-container {
+    cursor: pointer;
+    background-color: #0a66c2;
+}
+
+.email-container {
+    cursor: pointer;
+    background-color: #30aa0041;
 }
 
 @keyframes slideInFromLeft {
@@ -55,7 +57,6 @@
 .linkedin-container:hover,
 .email-container:hover {
     transform: translateY(-5px);
-    background-color: #e8e8e83a;
 }
 
 .linkedin-container p,
@@ -70,51 +71,45 @@
     height: auto;
 }
 
-form {
-    animation: slideInFromLeft 0.7s ease-out forwards, fadeIn 0.7s ease-in-out forwards;
-    display: flex;
-    align-items: flex-start;
-    flex-direction: column;
-    width: 50%;
-    font-size: 16px;
+.form-container {
+    animation: slideInFromLeft 0.7s ease-out, fadeIn 0.7s ease-in-out;
 }
 
-input,
-textarea {
+.input-group {
+    margin-bottom: 20px;
+    width: 52vw;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.input-group input,
+.input-group textarea {
     width: 100%;
-    padding: 7px;
-    outline: none;
-    border-radius: 5px;
-    border: 1px solid rgb(220, 220, 220);
+    padding: 10px;
+    box-sizing: border-box;
+    resize: none;
 }
 
-input:focus,
-textarea:focus {
-    border: 2px solid rgba(0, 206, 158, 1);
+.input-group textarea {
+    height: 200px;
 }
 
-input[type="text"],
-input[type="email"] {
-    height: 35px;
-}
-
-textarea {
-    max-width: 100%;
-    min-width: 100%;
-    max-height: 100px;
-    min-height: 100px;
-}
-
-label {
-    margin-top: 1rem;
-}
-
-input[type="submit"] {
-    margin-top: 2rem;
-    cursor: pointer;
-    background: rgb(249, 105, 14);
+.submit-button input {
+    background-color: #e07f23;
     color: white;
     border: none;
+    cursor: pointer;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    border-radius: 5px;
 }
 
 .popup {

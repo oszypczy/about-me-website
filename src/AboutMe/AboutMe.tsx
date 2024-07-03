@@ -7,16 +7,16 @@ function AboutMe() {
 
     return (
         <div className="aboutMeContainer">
+            <div className="imageSection animateImage">
+                <img src={image} alt="Me" />
+                <div className="imageName">Marcin J. Szerszeń</div>
+            </div>
             <div className="bioSection animateBio">
                 {(t('bioParagraphs', { returnObjects: true }) as string[]).map((paragraph, index) => (
                     <div key={index} className="bioParagraph">
                         <p>{paragraph}</p>
                     </div>
                 ))}
-            </div>
-            <div className="imageSection animateImage">
-                <img src={image} alt="Me" />
-                <div className="imageName">Marcin J. Szerszeń</div>
             </div>
         </div>
     );

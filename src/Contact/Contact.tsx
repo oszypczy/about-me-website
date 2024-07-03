@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import React, { useRef, useState } from 'react';
 import emailjs from '@emailjs/browser';
 import './Contact.css';
 import { useTranslation } from 'react-i18next';
@@ -20,10 +20,36 @@ export const Contact = () => {
     const [message, setMessage] = useState('');
     const [showPopup, setShowPopup] = useState(false);
     const [exitAnimation, setExitAnimation] = useState(false);
+    const [isFormVisible, setIsFormVisible] = useState(false);
+    const [isFormValid, setIsFormValid] = useState(false);
     const { t } = useTranslation();
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    const toggleFormVisibility = () => {
+        setIsFormVisible(!isFormVisible);
+    };
+
+    const checkFormValidity = () => {
+        return userName.trim() !== '' && emailRegex.test(userEmail) && message.trim() !== '';
+    };
+
+    const handleInputChange = (setter: (value: string) => void) => (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+        setter(e.target.value);
+        setIsFormValid(checkFormValidity());
+    };
+
+    const navigateToLinkedIn = () => {
+        window.open("https://www.Linkedin.com/in/MarcinSzerszen/", "_blank", "noopener,noreferrer");
+    };
 
     const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
+
+        if (!isFormValid) {
+            alert('Please ensure all fields are filled correctly.');
+            return;
+        }
 
         if (form.current) {
             emailjs
@@ -39,52 +65,60 @@ export const Contact = () => {
                             setExitAnimation(true);
                             setTimeout(() => setShowPopup(false), 500);
                         }, 5000);
-                    },
-                    (error) => {
-                        console.log('FAILED...', error.text);
+                        setUserName('');
+                        setUserEmail('');
+                        setMessage('');
+                        setIsFormValid(false);
                     },
                 );
         }
-        setUserName('');
-        setUserEmail('');
-        setMessage('');
     };
 
     return (
         <div className="contact-container">
             {showPopup && <Popup exit={exitAnimation} />}
-            <div className='linkedin-container'>
+            <div className='linkedin-container' onClick={navigateToLinkedIn}>
                 <p>{t("contact_container")}</p>
-                <a href="https://www.Linkedin.com/in/MarcinSzerszen/" target="_blank" rel="noopener noreferrer">
-                    <img src="linkedin.png" alt="LinkedIn" />
-                </a>
+                <img src="linkedin.png" alt="LinkedIn" />
             </div>
-            <div className='email-container'>
+            <div className='email-container' onClick={toggleFormVisibility}>
                 <p>{t("email_container")}</p>
             </div>
-            <form ref={form} onSubmit={sendEmail}>
-                <label>{t("name")}</label>
-                <input
-                    type="text"
-                    name="user_name"
-                    value={userName}
-                    onChange={(e) => setUserName(e.target.value)}
-                />
-                <label>Email</label>
-                <input
-                    type="email"
-                    name="user_email"
-                    value={userEmail}
-                    onChange={(e) => setUserEmail(e.target.value)}
-                />
-                <label>{t("message")}</label>
-                <textarea
-                    name="message"
-                    value={message}
-                    onChange={(e) => setMessage(e.target.value)}
-                />
-                <input type="submit" value={t("send")} />
-            </form>
+            {isFormVisible && (
+                <div className="form-container">
+                    <form ref={form} onSubmit={sendEmail}>
+                        <div className="input-group">
+                            <label>{t("name")}</label>
+                            <input
+                                type="text"
+                                name="user_name"
+                                value={userName}
+                                onChange={handleInputChange(setUserName)}
+                            />
+                        </div>
+                        <div className="input-group">
+                            <label>Email</label>
+                            <input
+                                type="email"
+                                name="user_email"
+                                value={userEmail}
+                                onChange={handleInputChange(setUserEmail)}
+                            />
+                        </div>
+                        <div className="input-group">
+                            <label>{t("message")}</label>
+                            <textarea
+                                name="message"
+                                value={message}
+                                onChange={handleInputChange(setMessage)}
+                            />
+                        </div>
+                        <div className="input-group submit-button">
+                            <input type="submit" value={t("send")} />
+                        </div>
+                    </form>
+                </div>
+            )}
         </div>
     );
 };
