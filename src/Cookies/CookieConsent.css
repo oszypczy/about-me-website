@@ -31,3 +31,10 @@
 .cookie-consent-container p {
     font-size: 14px;
 }
+
+@media (max-width: 430px) {
+    .cookie-consent-container {
+        padding: 10px;
+        width: 96vw;
+    }
+}

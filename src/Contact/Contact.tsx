@@ -69,6 +69,7 @@ export const Contact = () => {
                         setUserEmail('');
                         setMessage('');
                         setIsFormValid(false);
+                        toggleFormVisibility();
                     },
                 );
         }

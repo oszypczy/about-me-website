@@ -12,15 +12,15 @@ function Home() {
 
     return (
         <div>
-            <button key={isSecondWindowVisible ? 'left' : 'right'} onClick={toggleSecondWindow} className={isSecondWindowVisible ? 'left-arrow' : 'right-arrow'}>
-                {isSecondWindowVisible ? '←' : '→'}
-            </button>
             <div className="window-container">
                 <div className="first-window" style={{ display: isSecondWindowVisible ? 'none' : 'flex' }}>
                     <h1>{t('title1')}</h1>
                     <h2>{t('title2')}</h2>
                     <h2>{t('title3')}</h2>
                     <p>{t('quote')}</p>
+                    <button key={'right'} onClick={toggleSecondWindow} className={'right-arrow'}>
+                        {'→'}
+                    </button>
                 </div>
                 <div className="second-window" style={{ display: isSecondWindowVisible ? 'flex' : 'none' }}>
                     <div className="second-window-topic">
@@ -37,6 +37,9 @@ function Home() {
                             ))}
                         </ul>
                     </div>
+                    <button key={'left'} onClick={toggleSecondWindow} className={'left-arrow'}>
+                        {'←'}
+                    </button>
                 </div>
             </div>
         </div>

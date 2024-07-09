@@ -11,9 +11,7 @@
 }
 
 .left-arrow {
-    right: 0;
-    position: -webkit-sticky;
-    position: sticky;
+    left: 0;
 }
 
 .right-arrow {
@@ -21,7 +19,6 @@
 }
 
 .window-container {
-    display: flex;
     position: relative;
 }
 
@@ -30,6 +27,7 @@
     width: 100vw;
     height: 100vh;
     flex-direction: column;
+    display: flex;
     align-items: center;
     text-align: center;
     animation: fadeIn 1.5s ease-in-out;
@@ -175,4 +173,39 @@
 .second-window-description,
 .second-window-topic {
     animation: slideInFromLeft 1s ease-out;
+}
+
+@media (max-width: 430px) {
+    .first-window h1 {
+        font-size: 24px;
+    }
+
+    .first-window h2 {
+        font-size: 18px;
+    }
+
+    .first-window p {
+        font-size: 16px;
+    }
+
+    .right-arrow {
+        position: relative;
+        margin-top: 20px;
+        top: 0;
+    }
+
+    .left-arrow {
+        position: relative;
+        margin-top: 20px;
+    }
+
+    .second-window-topic {
+        font-size: 6px;
+        margin-top: 50px;
+    }
+
+    .second-window-description,
+    .second-window-experience {
+        text-align: left;
+    }
 }

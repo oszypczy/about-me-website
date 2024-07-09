@@ -15,7 +15,7 @@ nav {
     display: none;
 }
 
-@media (max-width: 425px) {
+@media (max-width: 430px) {
     .NavBar .hamburger {
         display: block;
         cursor: pointer;

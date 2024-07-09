@@ -165,3 +165,11 @@
         right: -100%;
     }
 }
+
+@media (max-width: 430px) {
+
+    .linkedin-container {
+        margin-top: 60px;
+    }
+
+}
